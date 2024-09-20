@@ -2,6 +2,16 @@ import pandas as pd
 import yfinance as yf
 import altair as alt
 import streamlit as st
+import time
+
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+    latest_iteration.text(f'ローディング　{i+1}')
+    bar.progress(i + 1)
+    time.sleep(0.1)
+'完了'
 
 st.title('米国株価可視化アプリ')
 
